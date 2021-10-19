@@ -5,9 +5,8 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-// static char *font = "NotoSansMono Nerd Font:pixelsize=27:antialias=true:autohint=true";
-static char *font = "Source Code Pro:pixelsize=29:antialias=true:autohint=true";
-static int borderpx = 2;
+static char *font = "Source Code Pro:style=Medium:pixelsize=29:antialias=true:autohint=true";
+static int borderpx = 0;
 
 /*
  * What program is execed by st depends of these precedence rules:
@@ -116,7 +115,6 @@ static const char *colorname[] = {
 	"#6c71c4",  /* 13: brmagenta*/
 	"#93a1a1",  /* 14: brcyan   */
 	"#fdf6e3",  /* 15: brwhite  */
-    "black",
 };
 
 /*
@@ -194,8 +192,8 @@ static Shortcut shortcuts[] = {
 	{ TERMMOD,              XK_Y,           selpaste,       {.i =  0} },
 	{ ShiftMask,            XK_Insert,      selpaste,       {.i =  0} },
 	{ TERMMOD,              XK_Num_Lock,    numlock,        {.i =  0} },
-	{ TERMMOD,              XK_K,           kscrollup,      {.i = 10} },
-	{ TERMMOD,              XK_J,           kscrolldown,    {.i = 10} },
+	{ TERMMOD,              XK_K,           kscrollup,      {.i = 1} },
+	{ TERMMOD,              XK_J,           kscrolldown,    {.i = 1} },
 	{ TERMMOD,              XK_U,           copyurl,        {.i =  0} },
 };
 
