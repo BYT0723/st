@@ -5,7 +5,9 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
+// static char *font = "Source Code Pro:style=Medium Italic:pixelsize=29:antialias=true:autohint=true";
 static char *font = "Source Code Pro:style=Medium:pixelsize=29:antialias=true:autohint=true";
+// static char *font = "Source Code Pro:style=Medium:pixelsize=22:antialias=true:autohint=true";
 static int borderpx = 0;
 
 /*
@@ -192,8 +194,8 @@ static Shortcut shortcuts[] = {
 	{ TERMMOD,              XK_Y,           selpaste,       {.i =  0} },
 	{ ShiftMask,            XK_Insert,      selpaste,       {.i =  0} },
 	{ TERMMOD,              XK_Num_Lock,    numlock,        {.i =  0} },
-	{ TERMMOD,              XK_K,           kscrollup,      {.i = 1} },
-	{ TERMMOD,              XK_J,           kscrolldown,    {.i = 1} },
+	{ MODKEY|ControlMask,   XK_k,           kscrollup,      {.i = 1} },
+	{ MODKEY|ControlMask,   XK_j,           kscrolldown,    {.i = 1} },
 	{ TERMMOD,              XK_U,           copyurl,        {.i =  0} },
 };
 
