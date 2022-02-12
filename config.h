@@ -6,8 +6,8 @@
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
 // static char *font = "Source Code Pro:style=Medium Italic:pixelsize=29:antialias=true:autohint=true";
-static char *font = "Source Code Pro:style=Medium:pixelsize=29:antialias=true:autohint=true";
-// static char *font = "Source Code Pro:style=Medium:pixelsize=22:antialias=true:autohint=true";
+// static char *font = "Source Code Pro:style=Medium Italic:pixelsize=22:antialias=true:autohint=true";
+static char *font = "Source Code Pro:style=Medium Italic:pixelsize=20:antialias=true:autohint=true";
 static int borderpx = 0;
 
 /*
@@ -119,6 +119,27 @@ static const char *colorname[] = {
 	"#fdf6e3",  /* 15: brwhite  */
 };
 
+/* Terminal colors for alternate (light) palette */
+static const char *altcolorname[] = {
+	/* solarized light */
+	"#eee8d5",  /*  0: black    */
+	"#dc322f",  /*  1: red      */
+	"#859900",  /*  2: green    */
+	"#b58900",  /*  3: yellow   */
+	"#268bd2",  /*  4: blue     */
+	"#d33682",  /*  5: magenta  */
+	"#2aa198",  /*  6: cyan     */
+	"#073642",  /*  7: white    */
+	"#fdf6e3",  /*  8: brblack  */
+	"#cb4b16",  /*  9: brred    */
+	"#93a1a1",  /* 10: brgreen  */
+	"#839496",  /* 11: bryellow */
+	"#657b83",  /* 12: brblue   */
+	"#6c71c4",  /* 13: brmagenta*/
+	"#586e75",  /* 14: brcyan   */
+	"#002b36",  /* 15: brwhite  */
+};
+
 /*
  * Default colors (colorname index)
  * foreground, background, cursor
@@ -197,6 +218,7 @@ static Shortcut shortcuts[] = {
 	{ MODKEY|ControlMask,   XK_k,           kscrollup,      {.i = 1} },
 	{ MODKEY|ControlMask,   XK_j,           kscrolldown,    {.i = 1} },
 	{ TERMMOD,              XK_U,           copyurl,        {.i =  0} },
+	{ XK_ANY_MOD,           XK_F6,          swapcolors,     {.i =  0} },
 };
 
 /*
