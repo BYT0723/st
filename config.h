@@ -5,9 +5,16 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-// static char *font = "Source Code Pro:style=Medium Italic:pixelsize=29:antialias=true:autohint=true";
-// static char *font = "Source Code Pro:style=Medium Italic:pixelsize=22:antialias=true:autohint=true";
-static char *font = "Source Code Pro:style=Medium Italic:pixelsize=20:antialias=true:autohint=true";
+// Italic
+// static char *font = "Source Code Pro:style=Medium:pixelsize=30:antialias=true:autohint=true";
+// static char *font = "Source Code Pro:style=Medium:pixelsize=25:antialias=true:autohint=true";
+// static char *font = "Source Code Pro:style=Medium:pixelsize=24:antialias=true:autohint=true";
+static char *font = "Source Code Pro:style=Medium:pixelsize=21:antialias=true:autohint=true";
+/* Spare fonts */
+static char *font2[] = {
+  "文泉驿等宽微米黑:style=Regular:pixelsize=21:antialias=true:autohint=true"
+};
+
 static int borderpx = 0;
 
 /*
