@@ -9,10 +9,11 @@
 // static char *font = "Source Code Pro:style=Medium:pixelsize=30:antialias=true:autohint=true";
 // static char *font = "Source Code Pro:style=Medium:pixelsize=25:antialias=true:autohint=true";
 // static char *font = "Source Code Pro:style=Medium:pixelsize=24:antialias=true:autohint=true";
-static char *font = "Source Code Pro:style=Medium:pixelsize=21:antialias=true:autohint=true";
+static char *font = "Source Code Pro:style=Medium:pixelsize=20:antialias=true:autohint=true";
 /* Spare fonts */
 static char *font2[] = {
-  "文泉驿等宽微米黑:style=Regular:pixelsize=21:antialias=true:autohint=true"
+  // "NotoSansMono Nerd Font:style=Medium:pixelsize=20:antialias=true:autohint=true",
+  "SauceCodePro Nerd Font:style=Medium:pixelsize=20:antialias=true:autohint=true",
 };
 
 static int borderpx = 0;
