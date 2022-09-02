@@ -699,7 +699,7 @@ void xresize(int col, int row) {
 ushort sixd_to_16bit(int x) { return x == 0 ? 0 : 0x3737 + 0x2828 * x; }
 
 const char *getcolorname(int i) {
-  return (usealtcolors) ? altcolorname[i] : colorname[i];
+  return (usealtcolors) ? getcolorname(i) : colorname[i];
 }
 
 int xloadcolor(int i, const char *name, Color *ncolor) {

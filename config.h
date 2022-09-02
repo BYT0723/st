@@ -6,15 +6,16 @@
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
 // Italic
-// static char *font = "Source Code Pro:style=Medium:pixelsize=30:antialias=true:autohint=true";
-// static char *font = "Source Code Pro:style=Medium:pixelsize=25:antialias=true:autohint=true";
-// static char *font = "Source Code Pro:style=Medium:pixelsize=24:antialias=true:autohint=true";
-static char *font = "Source Code Pro:style=Medium:pixelsize=20:antialias=true:autohint=true";
+static char *font = "Source Code Pro:style=Medium:pixelsize=23:antialias=true:autohint=true";
+// static char *font = "Source Code Pro:style=Medium:pixelsize=19:antialias=true:autohint=true";
+
+// static char *font = "CaskaydiaCove Nerd Font Mono:style=Regular:pixelsize=23:antialias=true:autohint=true";
+
 /* Spare fonts */
 static char *font2[] = {
-  // "NotoSansMono Nerd Font:style=Medium:pixelsize=20:antialias=true:autohint=true",
-  "SauceCodePro Nerd Font:style=Medium:pixelsize=20:antialias=true:autohint=true",
+  "NotoSansMono Nerd Font:style=Medium:pixelsize=25:antialias=true:autohint=true",
 };
+
 
 static int borderpx = 0;
 
@@ -26,7 +27,7 @@ static int borderpx = 0;
  * 4: value of shell in /etc/passwd
  * 5: value of shell in config.h
  */
-static char *shell = "/bin/sh";
+static char *shell = "/bin/zsh";
 char *utmp = NULL;
 /* scroll program: to enable use a string like "scroll" */
 char *scroll = NULL;
@@ -84,7 +85,7 @@ static unsigned int cursorthickness = 2;
 static int bellvolume = 0;
 
 /* default TERM value */
-char *termname = "st-256color";
+char *termname = "xterm-256color";
 
 /*
  * spaces per tab
@@ -125,27 +126,6 @@ static const char *colorname[] = {
 	"#6c71c4",  /* 13: brmagenta*/
 	"#93a1a1",  /* 14: brcyan   */
 	"#fdf6e3",  /* 15: brwhite  */
-};
-
-/* Terminal colors for alternate (light) palette */
-static const char *altcolorname[] = {
-	/* solarized light */
-	"#eee8d5",  /*  0: black    */
-	"#dc322f",  /*  1: red      */
-	"#859900",  /*  2: green    */
-	"#b58900",  /*  3: yellow   */
-	"#268bd2",  /*  4: blue     */
-	"#d33682",  /*  5: magenta  */
-	"#2aa198",  /*  6: cyan     */
-	"#073642",  /*  7: white    */
-	"#fdf6e3",  /*  8: brblack  */
-	"#cb4b16",  /*  9: brred    */
-	"#93a1a1",  /* 10: brgreen  */
-	"#839496",  /* 11: bryellow */
-	"#657b83",  /* 12: brblue   */
-	"#6c71c4",  /* 13: brmagenta*/
-	"#586e75",  /* 14: brcyan   */
-	"#002b36",  /* 15: brwhite  */
 };
 
 /*
@@ -225,8 +205,7 @@ static Shortcut shortcuts[] = {
 	{ TERMMOD,              XK_Num_Lock,    numlock,        {.i =  0} },
 	{ MODKEY|ControlMask,   XK_k,           kscrollup,      {.i = 1} },
 	{ MODKEY|ControlMask,   XK_j,           kscrolldown,    {.i = 1} },
-	{ TERMMOD,              XK_U,           copyurl,        {.i =  0} },
-	{ XK_ANY_MOD,           XK_F6,          swapcolors,     {.i =  0} },
+	{ MODKEY|ControlMask,   XK_u,           copyurl,        {.i =  0} },
 };
 
 /*
