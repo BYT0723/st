@@ -6,15 +6,15 @@
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
 // Italic
-// static char *font = "Source Code Pro:style=Medium:pixelsize=23:antialias=true:autohint=true";
+static char *font = "Source Code Pro:style=Medium:pixelsize=23:antialias=true:autohint=true";
 // static char *font = "Source Code Pro:style=Medium:pixelsize=19:antialias=true:autohint=true";
 
 // static char *font = "CaskaydiaCove Nerd Font Mono:style=Regular:pixelsize=23:antialias=true:autohint=true";
-static char *font = "JetBrains Mono:style=Medium:pixelsize=23:antialias=true:autohint=true";
+// static char *font = "JetBrains Mono:style=Medium:pixelsize=23:antialias=true:autohint=true";
 
 /* Spare fonts */
 static char *font2[] = {
-  "NotoSansMono Nerd Font:style=Medium:pixelsize=25:antialias=true:autohint=true",
+  "NotoSansMono Nerd Font:style=Medium:pixelsize=24:antialias=true:autohint=true",
 };
 
 
@@ -39,7 +39,7 @@ char *vtiden = "\033[?6c";
 
 /* Kerning / character bounding-box multipliers */
 static float cwscale = 1.0;
-static float chscale = 1.2;
+static float chscale = 1.0;
 
 /*
  * word delimiter string
