@@ -6,10 +6,11 @@
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
 // Italic
-static char *font = "Source Code Pro:style=Medium:pixelsize=23:antialias=true:autohint=true";
+// static char *font = "Source Code Pro:style=Medium:pixelsize=23:antialias=true:autohint=true";
 // static char *font = "Source Code Pro:style=Medium:pixelsize=19:antialias=true:autohint=true";
 
 // static char *font = "CaskaydiaCove Nerd Font Mono:style=Regular:pixelsize=23:antialias=true:autohint=true";
+static char *font = "JetBrains Mono:style=Medium:pixelsize=23:antialias=true:autohint=true";
 
 /* Spare fonts */
 static char *font2[] = {
@@ -38,7 +39,7 @@ char *vtiden = "\033[?6c";
 
 /* Kerning / character bounding-box multipliers */
 static float cwscale = 1.0;
-static float chscale = 1.0;
+static float chscale = 1.2;
 
 /*
  * word delimiter string
@@ -500,4 +501,4 @@ static char ascii_printable[] =
 #define UNDERCURL_SPIKY 1
 #define UNDERCURL_CAPPED 2
 // Active style
-#define UNDERCURL_STYLE UNDERCURL_CAPPED
+#define UNDERCURL_STYLE UNDERCURL_CURLY
