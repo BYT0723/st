@@ -5,12 +5,16 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-// static char *font = "CaskaydiaCove Nerd Font Mono:style=Regular:pixelsize=23:antialias=true:autohint=true"; 
-static char *font = "JetBrains Mono:style=Medium:pixelsize=15:antialias=true:autohint=true"; 
-// static char *font = "Source Code Pro:style=Medium:pixelsize=20:antialias=true:autohint=true";
-// static char *font = "Source Code Pro:style=Medium:pixelsize=15:antialias=true:autohint=true";
+// static char *font = "JetBrains
+// Mono:style=Medium:pixelsize=20:antialias=true:autohint=true";
+static char *font =
+    "CaskaydiaCove Nerd "
+    "Font:style=SemiLight:pixelsize=20:antialias=true:autohint=true";
+// static char *font = "Source Code
+// Pro:style=Medium:pixelsize=20:antialias=true:autohint=true";
 static char *font2[] = {
-    "NotoSansMono Nerd Font:style=Medium:pixelsize=15:antialias=true:autohint=true",
+    "NotoSansMono Nerd "
+    "Font:style=Medium:pixelsize=20:antialias=true:autohint=true ",
 };
 
 static int borderpx = 0;
@@ -33,7 +37,7 @@ char *stty_args = "stty raw pass8 nl -echo -iexten -cstopb 38400";
 char *vtiden = "\033[?6c";
 
 /* Kerning / character bounding-box multipliers */
-static float cwscale = 0.9;
+static float cwscale = 1.0;
 static float chscale = 1.0;
 
 /*
@@ -100,9 +104,6 @@ char *termname = "st-256color";
  */
 unsigned int tabspaces = 4;
 
-/* bg opacity */
-float alpha = 0.9;
-
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
     /* solarized dark */
@@ -132,6 +133,7 @@ unsigned int defaultfg = 12;
 unsigned int defaultbg = 8;
 static unsigned int defaultcs = 14;
 static unsigned int defaultrcs = 15;
+
 /*
  * Default shape of cursor
  * 2: Block ("█")
@@ -139,7 +141,7 @@ static unsigned int defaultrcs = 15;
  * 6: Bar ("|")
  * 7: Snowman ("☃")
  */
-static unsigned int cursorshape = 4;
+static unsigned int cursorshape = 2;
 
 /*
  * Default columns and rows numbers
@@ -495,4 +497,4 @@ static char ascii_printable[] = " !\"#$%&'()*+,-./0123456789:;<=>?"
 #define UNDERCURL_SPIKY 1
 #define UNDERCURL_CAPPED 2
 // Active style
-#define UNDERCURL_STYLE UNDERCURL_CURLY
+#define UNDERCURL_STYLE UNDERCURL_CAPPED
