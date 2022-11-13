@@ -1254,6 +1254,8 @@ void xinit(int cols, int rows) {
   xsel.xtarget = XInternAtom(xw.dpy, "UTF8_STRING", 0);
   if (xsel.xtarget == None)
     xsel.xtarget = XA_STRING;
+
+  boxdraw_xinit(xw.dpy, xw.cmap, xw.draw, xw.vis);
 }
 
 int xmakeglyphfontspecs(XftGlyphFontSpec *specs, const Glyph *glyphs, int len,
@@ -1300,8 +1302,13 @@ int xmakeglyphfontspecs(XftGlyphFontSpec *specs, const Glyph *glyphs, int len,
       yp = winy + font->ascent + win.cyo;
     }
 
-    /* Lookup character index with default font. */
-    glyphidx = XftCharIndex(xw.dpy, font->match, rune);
+    if (mode & ATTR_BOXDRAW) {
+      /* minor shoehorning: boxdraw uses only this ushort */
+      glyphidx = boxdrawindex(&glyphs[i]);
+    } else {
+      /* Lookup character index with default font. */
+      glyphidx = XftCharIndex(xw.dpy, font->match, rune);
+    }
     if (glyphidx) {
       specs[numspecs].font = font->match;
       specs[numspecs].glyph = glyphidx;
@@ -1536,8 +1543,12 @@ void xdrawglyphfontspecs(const XftGlyphFontSpec *specs, Glyph base, int len,
   }
 
   if (dmode & DRAW_FG) {
-    /* Render the glyphs. */
-    XftDrawGlyphFontSpec(xw.draw, fg, specs, len);
+    if (base.mode & ATTR_BOXDRAW) {
+      drawboxes(winx, winy, width / len, win.ch, fg, bg, specs, len);
+    } else {
+      /* Render the glyphs. */
+      XftDrawGlyphFontSpec(xw.draw, fg, specs, len);
+    }
 
     /* Render underline and strikethrough. */
     if (base.mode & ATTR_UNDERLINE) {
@@ -1581,7 +1592,7 @@ void xdrawglyphfontspecs(const XftGlyphFontSpec *specs, Glyph base, int len,
       if (base.ustyle != 3) {
         // XftDrawRect(xw.draw, fg, winx, winy + dc.font.ascent + 1, width, 1);
         XFillRectangle(xw.dpy, XftDrawDrawable(xw.draw), ugc, winx,
-                       winy + win.cyo + dc.font.ascent + 1, width, wlw);
+                       winy + dc.font.ascent + 1, width, wlw);
       } else if (base.ustyle == 3) {
         int ww = win.cw;                        // width;
         int wh = dc.font.descent - wlw / 2 - 1; // r.height/7;
@@ -1907,7 +1918,8 @@ void xdrawcursor(int cx, int cy, Glyph g, int ox, int oy, Glyph og, Line line,
   /*
    * Select the right color for the right mode.
    */
-  g.mode &= ATTR_BOLD | ATTR_ITALIC | ATTR_UNDERLINE | ATTR_STRUCK | ATTR_WIDE;
+  g.mode &= ATTR_BOLD | ATTR_ITALIC | ATTR_UNDERLINE | ATTR_STRUCK | ATTR_WIDE |
+            ATTR_BOXDRAW;
 
   if (IS_SET(MODE_REVERSE)) {
     g.mode |= ATTR_REVERSE;
