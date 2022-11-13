@@ -5,9 +5,7 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-// static char *font = "JetBrains Mono:style=Medium:pixelsize=20:antialias=true:autohint=true";
 static char *font = "CaskaydiaCove Nerd Font:style=SemiLight Italic:pixelsize=20:antialias=true:autohint=true";
-// static char *font = "Source Code Pro:style=Medium:pixelsize=20:antialias=true:autohint=true";
 static char *font2[] = {
     "NotoSansMono Nerd Font:style=Medium:pixelsize=20:antialias=true:autohint=true ",
 };
@@ -33,7 +31,7 @@ char *vtiden = "\033[?6c";
 
 /* Kerning / character bounding-box multipliers */
 static float cwscale = 1.0;
-static float chscale = 1.0;
+static float chscale = 1.2;
 
 /*
  * word delimiter string
