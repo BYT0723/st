@@ -5,7 +5,7 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "CaskaydiaCove Nerd Font:style=Regular:pixelsize=16:antialias=true:autohint=true";
+static char *font = "CaskaydiaCove Nerd Font:style=Regular:size=13";
 static char *font2[] = {
     // "NotoSansMono Nerd Font:style=Regular:pixelsize=16:antialias=true:autohint=true ",
 };
@@ -90,7 +90,7 @@ const int boxdraw_braille = 0;
 static int bellvolume = 0;
 
 /* default TERM value */
-char *termname = "st-256color";
+char *termname = "st";
 
 /*
  * spaces per tab
