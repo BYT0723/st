@@ -1,5 +1,7 @@
 /* See LICENSE for license details. */
 
+#include <X11/Xft/Xft.h>
+#include <hb-ft.h>
 #include <stdint.h>
 #include <sys/types.h>
 
@@ -8,7 +10,7 @@
 #define MAX(a, b) ((a) < (b) ? (b) : (a))
 #define LEN(a) (sizeof(a) / sizeof(a)[0])
 #define BETWEEN(x, a, b) ((a) <= (x) && (x) <= (b))
-#define DIVCEIL(n, d) (((n) + ((d)-1)) / (d))
+#define DIVCEIL(n, d) (((n) + ((d) - 1)) / (d))
 #define DEFAULT(a, b) (a) = (a) ? (a) : (b)
 #define LIMIT(x, a, b) (x) = (x) < (a) ? (a) : (x) > (b) ? (b) : (x)
 #define ATTRCMP(a, b)                                                          \
@@ -119,11 +121,16 @@ char *xstrdup(const char *);
 
 int isboxdraw(Rune);
 ushort boxdrawindex(const Glyph *);
+
+void hbunloadfonts();
+void hbtransform(XftGlyphFontSpec *, const Glyph *, size_t, int, int);
+
 #ifdef XFT_VERSION
 /* only exposed to x.c, otherwise we'll need Xft.h for the types */
 void boxdraw_xinit(Display *, Colormap, XftDraw *, Visual *);
 void drawboxes(int, int, int, int, XftColor *, XftColor *,
                const XftGlyphFontSpec *, int);
+
 #endif
 
 /* config.h globals */
