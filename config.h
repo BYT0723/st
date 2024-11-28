@@ -1,7 +1,7 @@
 /* See LICENSE file for copyright and license details. */
 
-
-#include "colorschemes/tokyonight_storm.h";
+// set term color scheme
+#include "colorschemes/tokyonight_storm.h"
 
 /*
  * appearance
