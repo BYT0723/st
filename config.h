@@ -1,14 +1,14 @@
 /* See LICENSE file for copyright and license details. */
 
 // set term color scheme
-#include "colorschemes/tokyonight_storm.h"
+#include "colorschemes/tokyonight_moon.h"
 
 /*
  * appearance
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "CaskaydiaCove Nerd Font:style=Regular:size=13";
+static char *font = "CaskaydiaCove Nerd Font:size=14";
 static char *font2[] = {
     // "NotoSansMono Nerd Font:style=Regular:pixelsize=16:antialias=true:autohint=true ",
 };
