@@ -8,9 +8,12 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "CaskaydiaCove Nerd Font:size=14";
+static char *font = "CaskaydiaCove Nerd Font:pixelsize=22:antialias=true;autohint=true";
 static char *font2[] = {
-    // "NotoSansMono Nerd Font:style=Regular:pixelsize=16:antialias=true:autohint=true ",
+    "Symbols Nerd Font Mono:pixelsize=22:antialias=true;autohint=true",
+    "Noto Sans Mono CJK SC:pixelsize=22:antialias=true;autohint=true",
+    // "Xiaolai Mono SC:pixelsize=22:antialias=true;autohint=true",
+    // "LXGW WenKai Mono:pixelsize=22:antialias=true;autohint=true",
 };
 
 static int borderpx = 0;
@@ -128,8 +131,8 @@ static unsigned int cursorshape = 2;
  * Default columns and rows numbers
  */
 
-static unsigned int cols = 80;
-static unsigned int rows = 24;
+static unsigned int cols = 140;
+static unsigned int rows = 48;
 
 /*
  * Default colour and shape of the mouse cursor
